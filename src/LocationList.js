@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import Location from "./Location"
+import React, { Component } from "react";
+import Location from "./Location";
 
-export default class EmployeeList extends Component {
+export default class LocationList extends Component {
   state = {
     locations: [
       { id: 1, name: "Nashville North" },
@@ -11,7 +11,9 @@ export default class EmployeeList extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.locations.map(this.state.locations)}
+        {this.state.locations.map(oneLocation => {
+          return <Location key={oneLocation.id} place={oneLocation} />;
+        })}
       </React.Fragment>
     );
   }
