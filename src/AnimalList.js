@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Animal from "./ListItems"
 
 
 export default class AnimalList extends Component {
@@ -15,10 +16,11 @@ export default class AnimalList extends Component {
 
     render() {
         return (
+
             <React.Fragment>
                 <ul>
                 {
-                    this.state.animals.map(animal =>  <li key = {animal.id} >{animal.name}</li> )
+                    this.state.animals.map(Animal)
                 }
                 </ul>
             </React.Fragment>

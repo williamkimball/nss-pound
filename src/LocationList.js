@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Location from "./ListItems"
 
 export default class EmployeeList extends Component {
   state = {
@@ -10,7 +11,7 @@ export default class EmployeeList extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.locations.map(location => <div key = {location.id} >{location.name}</div>)}
+        {this.state.locations.map(Location)}
       </React.Fragment>
     );
   }
