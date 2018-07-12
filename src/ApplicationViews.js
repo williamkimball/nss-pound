@@ -1,5 +1,5 @@
-import { Route } from '../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom'
-import React, { Component } from "../../../Library/Caches/typescript/2.9/node_modules/@types/react"
+import { Route } from 'react-router-dom'
+import React, { Component } from "react"
 import AnimalList from './AnimalList'
 import LocationList from './LocationList'
 import EmployeeList from './EmployeeList'
