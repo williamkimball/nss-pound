@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Animal from "./ListItems"
+import Animal from "./Animal"
 
 
 export default class AnimalList extends Component {
@@ -20,7 +20,7 @@ export default class AnimalList extends Component {
             <React.Fragment>
                 <ul>
                 {
-                    this.state.animals.map(Animal)
+                    this.state.animals.map(this.state.animals)
                 }
                 </ul>
             </React.Fragment>

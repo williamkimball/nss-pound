@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Employee from "./ListItems"
+import Employee from "./Employee"
 
 export default class EmployeeList extends Component {
     state = {
@@ -14,7 +14,9 @@ export default class EmployeeList extends Component {
         return (
             <React.Fragment>
             {
-                this.state.employees.map(Employee)
+                this.state.employees.map(oneEmployee => {
+                   return <Employee employee = {oneEmployee}/>
+                })
             }
             </React.Fragment>
         )
