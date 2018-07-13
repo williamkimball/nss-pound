@@ -11,6 +11,7 @@ import Login from "./Login";
 export default class ApplicationViews extends Component {
   // Check if credentials are in local storage
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
+  seshIsAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
   render() {
     return (
@@ -19,7 +20,7 @@ export default class ApplicationViews extends Component {
           exact
           path="/"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.isAuthenticated()||this.seshIsAuthenticated()) {
               return <LocationList />;
             } else {
               return <Login />;
@@ -31,7 +32,7 @@ export default class ApplicationViews extends Component {
         <Route
           path="/locations/:locationId"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.isAuthenticated()||this.seshIsAuthenticated()) {
               return <Location place={props.location.state.place} />;
             } else {
               return <Login />;
@@ -43,7 +44,7 @@ export default class ApplicationViews extends Component {
           exact
           path="/animals"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.isAuthenticated()||this.seshIsAuthenticated()) {
               return <AnimalList />;
             } else {
               return <Login />;
@@ -53,8 +54,8 @@ export default class ApplicationViews extends Component {
         <Route
           path="/animals/:animalId"
           render={props => {
-            if (this.isAuthenticated()) {
-              return <Animal place={props.location.state.animal} />;
+            if (this.isAuthenticated()||this.seshIsAuthenticated()) {
+              return <Animal animal={props.location.state.animal} />;
             } else {
               return <Login />;
             }
@@ -65,7 +66,7 @@ export default class ApplicationViews extends Component {
           exact
           path="/employees"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.isAuthenticated()||this.seshIsAuthenticated()) {
               return <EmployeeList />;
             } else {
               return <Login />;
@@ -75,7 +76,7 @@ export default class ApplicationViews extends Component {
         <Route
           path="/employees/:employeeId"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.isAuthenticated()||this.seshIsAuthenticated()) {
               return <Employee employee={props.location.state.employee} />;
             } else {
               return <Login />;
