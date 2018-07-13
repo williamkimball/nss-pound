@@ -23,9 +23,9 @@ export default class Login extends Component {
             the customer enters into local storage.
         */
     let isChecked = document.getElementById("checkbox_id").checked;
-    console.log(isChecked);
+    // console.log(isChecked);
     if (isChecked === true) {
-      console.log("ischecked");
+    //   console.log("ischecked");
       localStorage.setItem(
         "credentials",
         JSON.stringify({
@@ -34,7 +34,7 @@ export default class Login extends Component {
         })
       );
     } else {
-      console.log("ischecked");
+    //   console.log("ischecked");
       sessionStorage.setItem(
         "credentials",
         JSON.stringify({
@@ -67,7 +67,7 @@ export default class Login extends Component {
           required=""
         />
         <button type="submit">Sign in</button>
-        <label for="checkbox_id">Remember Me</label>
+        <label htmlFor="checkbox_id">Remember Me</label>
         <input type="checkbox" name="checkbox" id="checkbox_id" value="value" />
       </form>
     );
