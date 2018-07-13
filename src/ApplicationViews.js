@@ -33,7 +33,10 @@ export default class ApplicationViews extends Component {
           path="/locations/:locationId"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <Location place={props.location.state.place} />;
+              return <Location location={props.location.state.location}>
+              {props.location.state.location.name}
+          </Location>
+      
             } else {
               return <Login />;
             }
@@ -55,7 +58,10 @@ export default class ApplicationViews extends Component {
           path="/animals/:animalId"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <Animal animal={props.location.state.animal} />;
+              return <Animal animal={props.location.state.animal}>
+              {props.location.state.animal.name}
+          </Animal>
+      
             } else {
               return <Login />;
             }
@@ -77,7 +83,9 @@ export default class ApplicationViews extends Component {
           path="/employees/:employeeId"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <Employee employee={props.location.state.employee} />;
+              return <Employee employee={props.location.state.employee}>
+              {props.location.state.employee.name}
+          </Employee>      
             } else {
               return <Login />;
             }

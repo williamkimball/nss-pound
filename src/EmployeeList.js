@@ -1,22 +1,29 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 import Employee from "./Employee";
 
+
 export default class EmployeeList extends Component {
-  state = {
-    employees: [
-      { id: 1, name: "Jessica Younker" },
-      { id: 2, name: "Jordan Nelson" },
-      { id: 3, name: "Zoe LeBlanc" },
-      { id: 4, name: "Blaise Roberts" }
-    ]
-  };
-  render() {
-    return (
-      <React.Fragment>
-        {this.state.employees.map(oneEmployee => {
-          return <Employee key={oneEmployee.id} employee={oneEmployee} />;
-        })}
-      </React.Fragment>
-    );
-  }
+    state = {
+        employees: []
+    }
+
+    componentDidMount () {
+        fetch("http://localhost:5002/employees")
+        .then(e => e.json())
+        .then(employees => this.setState({ employees: employees }))
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                {
+                    this.state.employees.map(employee =>
+                        <Employee key={employee.id} employee={employee}>
+                            {employee.name}
+                        </Employee>
+                    )
+                }
+            </React.Fragment>
+        )
+    }
 }
