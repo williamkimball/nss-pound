@@ -1,22 +1,22 @@
 
 import React, { Component } from "react";
-import Search from "./Search";
-import APIManager from "./APIManager"
+// import Search from "./Search";
+// import APIManager from "./APIManager"
 
 export default class SearchList extends Component {
-  state = {
-    results: [],
-    search:""
-  };
+  // state = {
+  //   results: [],
+  //   search:""
+  // };
   // componentDidMount() {
   // APIManager.getAllResults(this.props.search).then(results => this.setState({ results: results }));
   // }
 
-  handleFieldChange = evt => {
-    const stateToChange = {};
-    stateToChange[evt.target.id] = evt.target.value;
-    this.setState(stateToChange);
-  };
+  // handleFieldChange = evt => {
+  //   const stateToChange = {};
+  //   stateToChange[evt.target.id] = evt.target.value;
+  //   this.setState(stateToChange);
+  // };
 
 //   getSearch(){
 //     let searchBar = document.querySelector("#search")

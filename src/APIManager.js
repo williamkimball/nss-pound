@@ -18,7 +18,7 @@ const APIManager = Object.create(
     },
     getAllResults: {
       value: terms => { 
-      return fetch(`http://localhost:5002/animals/?q=${terms}`).then(e => e.json())
+      return fetch(`http://localhost:5002/employees/?q=${terms}`).then(e => e.json())
 
       }
     }
