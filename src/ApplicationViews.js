@@ -7,6 +7,7 @@ import Animal from "./Animal";
 import Employee from "./Employee";
 import Location from "./Location";
 import Login from "./Login";
+import SearchResultsList from "./SearchResultsList"
 
 export default class ApplicationViews extends Component {
   // Check if credentials are in local storage
@@ -48,7 +49,7 @@ export default class ApplicationViews extends Component {
           path="/animals"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <AnimalList />;
+              return <AnimalList />
             } else {
               return <Login />;
             }
@@ -86,6 +87,17 @@ export default class ApplicationViews extends Component {
               return <Employee employee={props.location.state.employee}>
               {props.location.state.employee.name}
           </Employee>      
+            } else {
+              return <Login />;
+            }
+          }}
+        />
+                <Route
+          exact
+          path="/search"
+          render={props => {
+            if (this.isAuthenticated()||this.seshIsAuthenticated()) {
+              return <SearchResultsList />;
             } else {
               return <Login />;
             }

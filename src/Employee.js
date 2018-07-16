@@ -16,6 +16,7 @@ export default props => {
         >
           Details
         </Link>
+        <a href="#" onClick={() => props.checkOutEmployee(props.employee.id)}>Delete</a>
       </div>
     </div>
   );

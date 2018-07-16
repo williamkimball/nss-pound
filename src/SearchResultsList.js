@@ -4,12 +4,30 @@ import Search from "./Search";
 import APIManager from "./APIManager"
 
 export default class SearchList extends Component {
-  // state = {
-  //   results: []
-  // };
+  state = {
+    results: [],
+    search:""
+  };
   // componentDidMount() {
   // APIManager.getAllResults(this.props.search).then(results => this.setState({ results: results }));
   // }
+
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
+
+//   getSearch(){
+//     let searchBar = document.querySelector("#search")
+//     searchBar.onchange = function() {
+//       this.state.search = searchBar.value;
+//       console.log(this.state.search)
+//     }
+//   }
+//   componentDidMount() {
+// this.getSearch()
+//   }
 
   render() {
     return (
