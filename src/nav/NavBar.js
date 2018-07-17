@@ -3,7 +3,9 @@ import { Link}  from "react-router-dom";
 import "./NavBar.css";
 import APIManager from "./../APIManager"
 import { Redirect } from 'react-router-dom'
-// import { browserHistory } from 'react-router';
+import history from './../history'
+
+
 
 export default class NavBar extends Component {
   state = {
@@ -20,14 +22,16 @@ export default class NavBar extends Component {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
+
   };
 
   
   handleSubmit = (event) => {
     event.preventDefault();
-    APIManager.getAllResults(this.state.search).then(results => this.setState({ results: results }));
+    APIManager.getAllResults(this.state.search).then(results => this.setState({ results: results })).then(()=> {
+      history.push('/search')
+    })
 //do something...
-return <Redirect to='/Search'  />
   }
 
   render() {

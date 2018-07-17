@@ -22,7 +22,7 @@ export default class ApplicationViews extends Component {
           path="/"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <LocationList />;
+              return <LocationList {...props} />;
             } else {
               return <Login />;
             }
@@ -34,7 +34,7 @@ export default class ApplicationViews extends Component {
           path="/locations/:locationId"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <Location location={props.location.state.location}>
+              return <Location location={props.location.state.location} {...props}>
               {props.location.state.location.name}
           </Location>
       
@@ -49,7 +49,7 @@ export default class ApplicationViews extends Component {
           path="/animals"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <AnimalList />
+              return <AnimalList {...props}/>
             } else {
               return <Login />;
             }
@@ -59,7 +59,7 @@ export default class ApplicationViews extends Component {
           path="/animals/:animalId"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <Animal animal={props.location.state.animal}>
+              return <Animal animal={props.location.state.animal} {...props}>
               {props.location.state.animal.name}
           </Animal>
       
@@ -74,7 +74,7 @@ export default class ApplicationViews extends Component {
           path="/employees"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <EmployeeList />;
+              return <EmployeeList {...props}/>;
             } else {
               return <Login />;
             }
@@ -84,7 +84,7 @@ export default class ApplicationViews extends Component {
           path="/employees/:employeeId"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <Employee employee={props.location.state.employee}>
+              return <Employee employee={props.location.state.employee} {...props}>
               {props.location.state.employee.name}
           </Employee>      
             } else {
@@ -97,7 +97,7 @@ export default class ApplicationViews extends Component {
           path="/search"
           render={props => {
             if (this.isAuthenticated()||this.seshIsAuthenticated()) {
-              return <SearchResultsList />;
+              return <SearchResultsList {...props}/>;
             } else {
               return <Login />;
             }

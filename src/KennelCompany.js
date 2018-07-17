@@ -10,7 +10,7 @@ export default class KennelCompany extends Component {
     render() {
         return (
             <React.Fragment>
-                <NavBar />
+                <NavBar props={this.props}/>
                 <ApplicationViews />
             </React.Fragment>
         )

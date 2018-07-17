@@ -8,7 +8,7 @@ import "./index.css"
 
 ReactDOM.render((
     <Router>
-        <KennelCompany />
+        <KennelCompany props={this.props}/>
     </Router>
 ), document.querySelector("#root"))
 
